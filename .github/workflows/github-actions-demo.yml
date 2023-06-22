@@ -2,7 +2,7 @@ name: Github Actions Demo
 on: 
   push:
     branches: main
-    paths-ignore: .github
+    paths-ignore: .github/**
   schedule:
     - cron: '15 6 * * SUN'
   pull_request:
@@ -15,7 +15,7 @@ jobs:
    
    steps:
      - name: Display event
-       run: echo "${{ github.event.action }}"       
+       run: echo "${{ github.event_name }}"       
      
      - name: Display branch
        run: echo "${{ github.ref_name }}"
