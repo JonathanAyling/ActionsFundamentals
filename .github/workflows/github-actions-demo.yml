@@ -52,7 +52,7 @@ jobs:
     environment: 
       name: Production
       url: https://writeabout.net
-    needs: [Build]
+    needs: [Testing, LoadTesting]
     if: github.event.inputs.environment == 'Production'
     steps:
     - run: |
